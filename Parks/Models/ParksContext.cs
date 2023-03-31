@@ -13,7 +13,7 @@ namespace Parks.Models
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-      builder.Entity<Parks>()
+      builder.Entity<Park>()
         .HasData(
           new Park { ParkId = 1, Name = "Mount Rainier National Park", Location = " Washington state", Description = "Mount Rainier National Park, a 369-sq.-mile Washington state reserve southeast of Seattle, surrounds glacier-capped, 14,410-ft. Mount Rainier.", InterestingFacts = "Atop 6,400-ft.-high Sunrise, the highest point in the park reachable by car, visitors can admire Rainier and other nearby volcanoes, including Mount Adams.", PopularSights = "Paradise, Longmire, Sunrise." },
 
