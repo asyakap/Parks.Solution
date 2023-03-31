@@ -70,16 +70,16 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 
 ## Testing the API Endpoints
 
-You are welcome to test this API via [Postman](https://www.postman.com/), [curl](https://curl.se/), or [the ASP.NET Core MVC frontend "Parks Client"](ADD LINK HERE) create to work with this API. 
+You are welcome to test this API via [Postman](https://www.postman.com/), [curl](https://curl.se/), or [the ASP.NET Core MVC frontend "Parks Client"](https://github.com/asyakap/ParksClient.Solution) create to work with this API. 
 
-If you want to use the Parks Client, an ASP.NET Core MVC application, follow the setup instructions in the README of [this repo](ADD LINK HERE). 
+If you want to use the Parks Client, an ASP.NET Core MVC application, follow the setup instructions in the README of [this repo](https://github.com/asyakap/ParksClient.Solution). 
 
 ### Available Endpoints
 
 ```
 GET http://localhost:5000/api/parks/
 GET http://localhost:5000/api/parks/{id}
-GET http://localhost:5000/api/parks/page/{page}
+GET http://localhost:5000/api/parks/page/{page} - Further Exploration 
 POST http://localhost:5000/api/parks/
 PUT http://localhost:5000/api/parks/{id}
 DELETE http://localhost:5000/api/parks/{id}
@@ -102,7 +102,7 @@ The following query will return all parks with the name "Olympic":
 GET http://localhost:5000/api/parks?name=Olympic
 ```
 
-The following query will return the second page, with 2 parks on it:
+As a part of the further exploration, pagination was implemented in this project. All parks entries were broken down into pages with 2 parks on each page. The following query will return the second page with 2 parks on it:
 
 ```
 GET http://localhost:5000/api/parks/page/2
