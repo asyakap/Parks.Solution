@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Parks.Models;
+using System;
+using System.Collections.Generic;
 
 namespace Parks.Controllers
 {
@@ -140,6 +142,17 @@ namespace Parks.Controllers
       await _db.SaveChangesAsync();
 
       return NoContent();
+    }
+
+    [HttpGet("random")]
+    public async Task<ActionResult<Park>> GetRandomPark()
+    {
+      var parksNumber = _db.Parks.Count() + 1;
+      Random random = new Random();
+      var id = random.Next(1, parksNumber);
+      Park park = await _db.Parks.FindAsync(id);
+
+      return park;
     }
   }
 }
